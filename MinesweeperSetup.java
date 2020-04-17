@@ -1,3 +1,21 @@
+/* 
+ * CSCD 350 - Assignment 1, Team Coding Exercise (Minesweeper)
+ * 
+ * Individual Solution
+ * Author: C. William Bafus
+ * 
+ * Team Members
+ * C. William Bafus
+ * Austin Hall
+ * Steve Zuelke
+ * 
+ * Revision Number: 1.0
+ * Revision Author: N/A
+ * 
+ * Description: Minesweeper 
+ * 
+ */
+
 package Minesweeper;
 
 import java.util.Scanner;
@@ -57,6 +75,12 @@ public class MinesweeperSetup
         scanner.close();
 	}
 
+	/*
+	 * GenerateOutput()
+	 * 
+	 * Constructs an output stream based on the content of the Field[][] Array 
+	 */
+	
 	private static void GenerateOutput() {
         OutputField += "\nField: " + FieldNumber + "\n";
         
@@ -69,6 +93,13 @@ public class MinesweeperSetup
         }
 	}
 
+	/*
+	 * CalculateField()
+	 * 
+	 * Loops through the Field[][] Array, replacing any '.' characters with their appropriate value
+	 * as determined by CalculateAdjacentMineCount(row, col)
+	 */
+	
 	private static void CalculateField() {
         for(int a = 0; a < Field.length; a++) {
             for(int b = 0; b < Field[0].length; b++) {
@@ -79,6 +110,13 @@ public class MinesweeperSetup
         }
 	}
 
+	/*
+	 * CalculateAdjacentMineCount()
+	 * 
+	 * Calculates passed in field's (as determined by it's row/col) value by looping through adjacent fields
+	 * and totaling up the total number of mines encountered.
+	 */
+	
 	private static char CalculateAdjacentMineCount(int row, int col) {
         int mineCount = 0;
 
